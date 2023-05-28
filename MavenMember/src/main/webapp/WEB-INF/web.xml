@@ -1,0 +1,40 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  <!-- 실제 경로 제시 -->
+  <servlet>
+  	<servlet-name>FrontController</servlet-name>
+  	<display-name>FrontController</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controller.FrontController</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>JoinCon</servlet-name>
+  	<display-name>JoinCon</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controller.JoinCon</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>LoginController</servlet-name>
+  	<display-name>LoginController</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controller.LoginController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>FrontController</servlet-name>
+  	<!-- 실제 url mapping] 값 -->
+  	<url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>JoinCon</servlet-name>
+  	<url-pattern>/JoinCon</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>LoginController</servlet-name>
+  	<url-pattern>/LoginController</url-pattern>
+  </servlet-mapping>
+</web-app>

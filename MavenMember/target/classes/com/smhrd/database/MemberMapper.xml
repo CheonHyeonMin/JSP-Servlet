@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace : mapper - dao 매칭 -->
+<mapper namespace="WebMemberDAO">
+	<!-- id: 태그 식별값 -->
+	<insert id="join" parameterType="com.smhrd.model.WebMember">
+		insert into webmember values(#{email},#{pw},#{tel},#{address})
+	</insert>
+
+	<select id="login" parameterType="com.smhrd.model.WebMember" resultType="com.smhrd.model.WebMember">
+		select * from webmember where email=#{email} and pw = #{pw} <!-- where id= ${MyMember에 필드에 있는 id 변수 이름} -->
+	</select>
+	
+	<update id="update" parameterType="com.smhrd.model.WebMember">
+      update webmember set pw = #{pw}, tel = #{tel}, address = #{address} where email = #{email} and pw = #{pw}
+   </update>
+   
+   <!-- 2개 이상의 행을 가져올 경우  -> 타입=list , -->
+   <select id="select" resultType="com.smhrd.model.WebMember">
+   		select * from webmember
+   </select>
+   
+   <!-- 문자열 하나는 파라미터타입 안써도 됨 지정해주고 싶으면 타입으로만 지정-->
+   <!-- 값이 하나이고 자바에서 기본으로 제공하는 형태(기본타입, String) -->
+   <!-- 값이 하나일때는 #{아무값이나 넣어도 됨} -->
+   <delete id="delete" parameterType="String">
+   		delete from webmember where email=#{email}
+   </delete>
+
+
+
+</mapper>

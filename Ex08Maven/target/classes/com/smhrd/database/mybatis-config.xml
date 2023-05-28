@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+<properties resource="com/smhrd/database/db.properties"></properties>
+  <environments default="development">
+  	<!-- 개발중에 사용할 id는 development default: 기본으로 쓸 id 값-->
+    <environment id="development">
+      <transactionManager type="JDBC"/>
+      <dataSource type="POOLED">
+      								<!-- value에 driver에 쓴것처럼 써도 됨 -->
+        <property name="driver" value="${driver}"/>
+        <property name="url" value="${url}"/>
+        <property name="username" value="${username}"/>
+        <property name="password" value="${password}"/>
+      </dataSource>
+    </environment>
+  </environments>
+  <mappers>
+    <mapper resource="com/smhrd/database/MemberMapper.xml"/>
+  </mappers>
+</configuration>
+
